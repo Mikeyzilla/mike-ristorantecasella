@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.Menu-Page {
+    overflow: auto;
+}
+
+
+.HomePage {
+    color: white;
+    font-family: "Italiana";
+    font-size: 32px;
+}
+
+.HomePage:hover {
+    cursor: pointer;
+}
+
+.Menu-Section {
+   position: relative;
+   top: 100px;
+}
+
+.Menu-Title-Area {
+    text-align: center;
+    font-family: "Italiana";
+    font-size: 32px;
+}
+
+.Appetizer-Section, .Pasta-Section {
+    font-family: "Italiana";
+    font-size: 44px;
+    position: relative;
+    left: 80px;
+}

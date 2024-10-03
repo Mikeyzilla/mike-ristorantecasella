@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.MenuItem-Area {
+    font-family: "Italiana";
+    position: relative;
+    left: 200px;
+    margin-bottom: 80px;
+}
+
+.MenuItem-Title {
+    font-size: 26px;
+    clear: both;
+}
+
+.MenuItem-Content {
+    display: flex;
+}
+
+.MenuItem-Image {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px; 
+}
+
+.MenuItem-Description {
+    flex: 1;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.MenuItem-ItemDescription {
+    font-size: 24px;
+    width: 1000px;
+}
+
+.MenuItem-PriceArea {
+    position: relative;
+    right: 1400px;
+}
+
+.MenuItem-Price {
+    font-family: "Italiana";
+    position: relative;
+    font-size: 35px;
+    bottom: 70px;
+}
+
+.MenuItem-Calories {
+    font-family: "Italiana";
+    position: relative;
+    top: 75px;
+}
+
+.MenuItem-AdditionalInformation {
+    margin-top: 10px; 
+}
+
+.MenuItem-Allergens {
+    position: relative;
+    top: 50px;
+}
