@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.Registration-ContentArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh;
+}
+
+.Registration-Title {
+    margin-top: 120px;
+    font-size: 46px;
+    font-family: "Italiana";
+}
+
+.Promo-Message {
+    text-align: center; 
+    font-family: "Italiana";
+}
+
+.Registration-Grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: start;
+    margin-top: 20px; 
+    width: 80%; 
+}
+
+.Registration-Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.Button-Container {
+    display: flex;
+    justify-content: space-between; 
+    position: relative;
+    bottom: 20px;
+}
+
+input[type='submit'],
+.Login-Redirect {
+    flex: 1; 
+    margin: 0 10px;
+    padding: 15px;
+    font-size: 28px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.Registration-Field {
+    width: 100%;
+    padding: 20px;
+    font-size: 28px;
+    margin-bottom: 65px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.Promo-Image {
+    position: relative;
+    left: 100px;
+}

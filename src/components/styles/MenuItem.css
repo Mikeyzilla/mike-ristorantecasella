@@ -9,11 +9,12 @@
 
 .MenuItem-Title {
     font-size: 26px;
-    clear: both;
 }
 
 .MenuItem-Content {
-    display: flex;
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: 220px 450px 100px 100px;
 }
 
 .MenuItem-Image {
@@ -22,40 +23,63 @@
     margin-right: 20px; 
 }
 
-.MenuItem-Description {
-    flex: 1;
-    display: flex; 
-    flex-direction: column; 
+.MenuItem-ButtonArea {
+    position: relative;
+    left: 120px;
+    bottom: 100px;
+}
+
+.MenuItem-AddButton {
+    display: block;
+    width: 40px;
+    height: 35px;
+    position: relative;
+    bottom: 100px;
+    cursor: pointer;
+}
+
+.MenuItem-RemoveButton {
+    display: block;
+    width: 40px;
+    height: 35px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
 }
 
 .MenuItem-ItemDescription {
     font-size: 24px;
-    width: 1000px;
+    width: 400px;
+    position: relative;
+    bottom: 25px;
 }
 
 .MenuItem-PriceArea {
-    position: relative;
-    right: 1400px;
+    width: 100px;
 }
 
 .MenuItem-Price {
     font-family: "Italiana";
+    font-size: 32px;
     position: relative;
-    font-size: 35px;
-    bottom: 70px;
+    bottom: 35px;
 }
 
 .MenuItem-Calories {
     font-family: "Italiana";
-    position: relative;
-    top: 75px;
+    font-size: 24px;
+    margin-top: 85px;
+
 }
 
 .MenuItem-AdditionalInformation {
     margin-top: 10px; 
 }
 
-.MenuItem-Allergens {
+.MenuItem-SelectItem {
     position: relative;
-    top: 50px;
+    bottom: 140px;
+    left: 150px;
+    transform: scale(1.5);
+    cursor: pointer;
 }

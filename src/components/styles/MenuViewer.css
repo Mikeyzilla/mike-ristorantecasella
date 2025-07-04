@@ -1,18 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 .Menu-Page {
-    overflow: auto;
-}
-
-
-.HomePage {
-    color: white;
-    font-family: "Italiana";
-    font-size: 32px;
-}
-
-.HomePage:hover {
-    cursor: pointer;
+    overflow-y: auto;
+    max-height: 100vh;
+    overflow-x: hidden;
 }
 
 .Menu-Section {
@@ -26,9 +17,17 @@
     font-size: 32px;
 }
 
-.Appetizer-Section, .Pasta-Section {
+.Appetizer-Title, .Pasta-Title, .Desserts-Title {
     font-family: "Italiana";
     font-size: 44px;
     position: relative;
     left: 80px;
+}
+
+.Appetizer-Section, .Pasta-Section, .Desserts-Section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    margin-left: 80px; 
+    margin-right: 80px; 
 }

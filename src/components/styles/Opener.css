@@ -7,38 +7,12 @@
     height: 100vh; 
 }
 
-.NavigationBar-Area {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 100px;
-    width: 100%; 
-    background-color: rgb(13, 9, 43);
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    z-index: 1000; 
-    border: 5px solid black; 
-}
-
-.View-Menu, .Order-Ahead, .About-Us, .Profile {
-    color: white;
-    font-family: "Italiana";
-    font-size: 32px;
-}
-
-.View-Menu:hover,
-.Order-Ahead:hover,
-.About-Us:hover,
-.Profile:hover {
-    cursor: pointer;
-}
-
 .Logo-Circle {
     background-image: url(../../../public/RistoranteLogo5.jpg);
-    width: 600px;
-    height: 600px;
+    width: 445px;
+    height: 445px;
     border-radius: 50%;
     background-size: contain; 
-    margin-top: 250px;
+    margin-top: 190px;
+    background-repeat: no-repeat;
 }

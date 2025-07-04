@@ -1,0 +1,80 @@
+.OrderOnline-Page {
+    overflow-y: auto;
+    max-height: 100vh;
+    overflow-x: hidden;
+}
+
+.OrderOnline-Menu {
+    position: relative;
+    top: 100px;
+}
+
+.OrderOnline-Grid {
+    display: grid;  
+    grid-template-columns: 1fr 300px; 
+    height: 100vh; 
+}
+
+.OrderOnline-TitleArea {
+    text-align: center;
+    font-family: "Italiana";
+    font-size: 32px;
+}
+
+.Ticket-Cart {
+    position: fixed; 
+    right: 300px; 
+    top: 300px; 
+    background-color: white; 
+    width: 300px;
+    font-family: "Italiana";
+    border: 5px solid gray;
+    display: flex;
+    flex-direction: column;
+}
+
+.TicketCart-List {
+    flex-grow: 1; 
+    overflow-y: auto;  
+}
+
+.TicketCart-Total,
+.TicketCart-MoveToPayment {
+    text-align: center; 
+}
+
+
+.TicketCart-Title {
+    text-align: center;
+    font-family: "Italiana";
+}
+
+.TicketCart-Item {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.TicketCart-Quantity {
+    font-size: 16px;
+}
+
+.TicketCart-Total {
+    position: relative;
+    left: -20px;
+}
+
+.TicketCart-MoveToPayment {
+    position: relative;
+    left: 70px;
+}
+
+.OrderOnline-AppetizerTitle, .OrderOnline-PastaTitle, .OrderOnline-DessertsTitle {
+    font-family: "Italiana";
+    font-size: 44px;
+    position: relative;
+    left: 80px;
+}
+
+li {
+    margin-bottom: 10px;
+}
