@@ -9,18 +9,9 @@ const jwt = require('jsonwebtoken');
 app.use(cors());
 app.use(express.json());
 
-const JWT_SECRET = "aXlaepqw42%>213$$#"
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-});
-
-const db = new sqlite3.Database("C:\\Users\\mikej\\Desktop\\restaurant_user_info.db", (err) => {
-    if (err) {
-        console.error('Error connecting to the database:', err.message);
-    } else {
-        console.log('Connected to the SQLite database.');
-    }
 });
 
 app.post('/register', async (req, res) => {
