@@ -23,24 +23,41 @@
 
 .Ticket-Cart {
     position: fixed; 
-    right: 300px; 
-    top: 300px; 
+    right: 100px; 
+    top: 250px; 
     background-color: white; 
     width: 300px;
     font-family: "Italiana";
     border: 5px solid gray;
     display: flex;
     flex-direction: column;
+    height: 60vh; 
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .TicketCart-List {
     flex-grow: 1; 
     overflow-y: auto;  
+    margin-bottom: 10px;
+    padding-right: 5px; 
 }
 
 .TicketCart-Total,
 .TicketCart-MoveToPayment {
-    text-align: center; 
+    text-align: center;
+    margin-top: 10px;
+}
+
+.TicketCart-MoveToPayment {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
 }
 
 
@@ -52,6 +69,7 @@
 .TicketCart-Item {
     font-size: 24px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .TicketCart-Quantity {
@@ -63,11 +81,6 @@
     left: -20px;
 }
 
-.TicketCart-MoveToPayment {
-    position: relative;
-    left: 70px;
-}
-
 .OrderOnline-AppetizerTitle, .OrderOnline-PastaTitle, .OrderOnline-DessertsTitle {
     font-family: "Italiana";
     font-size: 44px;
@@ -75,6 +88,3 @@
     left: 80px;
 }
 
-li {
-    margin-bottom: 10px;
-}

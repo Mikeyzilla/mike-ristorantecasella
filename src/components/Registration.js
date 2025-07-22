@@ -39,8 +39,10 @@ function Registration() {
         <div>
             <NavigationBar />
             <div className='Registration-ContentArea'>
-                <h2 className='Registration-Title'>Join our Family!</h2>
-                <h2 className='Promo-Message'>Sign up now & receive a kids action hero for free!</h2>
+                <div className='Registration-Header'>
+                    <h2 className='Registration-Title'>Join our Family!</h2>
+                    <h2 className='Promo-Message'>Sign up now & receive a kids action hero for free!</h2>
+                </div>
                 <div className='Registration-Grid'>
                 <form onSubmit={createUser} className='Registration-Form'>
                     <input type='text' ref={usernameRef} placeholder='Username' className='Registration-Field'/>
@@ -57,7 +59,7 @@ function Registration() {
                 </form>
                     
                     <div className='Promo-ImageArea'>
-                        <img src='superhero.jpg' alt='Superhero' className='Promo-Image'/>
+                        <img src='superheroupdate.png' alt='Superhero' className='Promo-Image'/>
                     </div>
                 </div>
             </div>

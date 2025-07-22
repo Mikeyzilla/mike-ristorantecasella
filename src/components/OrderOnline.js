@@ -12,7 +12,7 @@ function OrderOnline() {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const redirect = useNavigate();
-
+    
     const addToCart = (item) => {
         const price = parseFloat(item.price);
         const existingItem = cartItems.find(cartItem => cartItem.title === item.title);
@@ -49,7 +49,7 @@ function OrderOnline() {
             }
             setTotalPrice(prevTotal => prevTotal - price);
         }
-    };
+    }; 
     
     const payNow = () => {
         if (localStorage.getItem('token') != null) {
@@ -124,9 +124,12 @@ function OrderOnline() {
                                     <h4 className='TicketCart-Quantity'>Quantity: {cartItem.quantity}</h4>
                                 </li>
                             ))}
+                        </ul>
+
+                        <div>
                             <h2 className='TicketCart-Total'>Your Amount is: ${totalPrice.toFixed(2)}</h2>
                             <button className='TicketCart-MoveToPayment' onClick={payNow}>PAY NOW</button>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
