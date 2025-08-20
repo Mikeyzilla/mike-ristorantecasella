@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuItem from './MenuItem';
 import { listOfAppetizers, listOfDesserts, listOfPasta } from './MenuItemInformation';
 import '../components/styles/OrderOnline.css';
