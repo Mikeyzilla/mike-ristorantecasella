@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.PayNow-Page {
+    margin-top: 110px;
+    font-family: "Italiana";
+}
+
+.PayNow-TitleArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.PayNow-Title {
+    font-size: 42px;
+    margin-bottom: 0px;
+}
+
+.PayNow-TotalTitle {
+    font-size: 42px;
+}
+
+.PayNow-Form {
+    margin-top: 100px;
+}
+
+.PayNow-IndividualArea {
+    display: flex;
+    justify-content: center;
+    margin-left: -100px;
+    margin-bottom: 50px;
+}
+
+.PayNow-IndividualArea h2 {
+    font-size: 28px;
+}
+
+.PayNow-Input {
+    max-width: 600px;
+    text-align: center;
+    font-family: "Italiana";
+    font-weight: bolder;
+    margin-left: 60px;
+    font-size: 24px;
+}
+
+.SubmitArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-left: 1020px;
+    margin-top: 100px;
+}
+
+.SubmitOrderButton {
+   width: 300px;
+   height: 100px;
+   border: 2px;
+   font-size: 30px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   text-align: center;
+   border-radius: 20px;
+   display: flex; 
+   justify-content: center; 
+   align-items: center;
+   margin-left: 1010px;
+}
+
+.PayNow-CardArea {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.PayNow-CardTitle {
+    margin-right: 50px;
+}
+
+.PayNow-CardArea input[type='text'] {
+    max-width: 300px;
+    text-align: center;
+    font-family: "Italiana";
+    font-weight: bolder;
+    font-size: 24px;
+}

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.Menu-Page {
+    overflow-y: auto;
+    max-height: 100vh;
+    overflow-x: hidden;
+}
+
+.Menu-Section {
+   position: relative;
+   top: 100px;
+   transform: scale(0.75);  /* shrink to 75% of original size */
+   transform-origin: top center; /* keeps it centered under the title */
+}
+
+.Menu-Title-Area {
+    text-align: center;
+    font-family: "Italiana";
+    font-size: 32px;
+}
+
+.Appetizer-Title, .Pasta-Title, .Desserts-Title {
+    font-family: "Italiana";
+    font-size: 44px;
+    position: relative;
+}
+
+.Appetizer-Section, .Pasta-Section, .Desserts-Section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    margin-left: 80px; 
+    margin-right: 80px; 
+}
+
+.MenuContent {
+    position: relative;
+    left: -240px;  
+    transform-origin: top left;
+}
+
+.Appetizer-Title,
+.Pasta-Title,
+.Desserts-Title {
+    font-family: "Italiana";
+    font-size: 44px;
+    position: relative;
+    left: 80px;   /* moves them to the right */
+}
