@@ -32,15 +32,15 @@ function MembershipBadge() {
 
     const determineMembershipBadgeImage = () => {
         if (membershipTier === "Amici") {
-            setMembershipBadge("url('/badges/amici.png')");
+            setMembershipBadge("url('../../public/Amici.png')");
         } else if (membershipTier === "Famiglia") {
-            setMembershipBadge("url('/badges/famiglia.png')");
+            setMembershipBadge("url('../../public/Famiglia.png')");
         } else if (membershipTier === "Nonna's Table") {
-            setMembershipBadge("url('/badges/nonna.png')"); //replace with real ai images
+            setMembershipBadge("url('../../public/Nonna.png')");
         } else if (membershipTier === "Villa di Lusso") {
-            setMembershipBadge("url('/badges/villa.png')");
+            setMembershipBadge("url('../../public/VillaDiLusso.png')");
         } else if (membershipTier === "The Don") {
-            setMembershipBadge("url('/badges/don.png')");
+            setMembershipBadge("url('../../public/TheDon.png')");
         }
     };
 
@@ -68,7 +68,7 @@ function MembershipBadge() {
         } else if (membershipTier === "Villa di Lusso") {
             setFollowingReward("The Don himself will toast to you!");
         } else if (membershipTier === "The Don") {
-            setFollowingReward("You're already at the top — no higher reward!");
+            setFollowingReward("You become co-owners with the Don himself!");
         }
     };
 

@@ -12,15 +12,15 @@ function OrderOnline() {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const redirect = useNavigate();
-    
+
     const addToCart = (item) => {
         const price = parseFloat(item.price);
         const existingItem = cartItems.find(cartItem => cartItem.title === item.title);
-        
+
         if (existingItem) {
-            const updatedCartItems = cartItems.map(cartItem => 
-                cartItem.title === item.title 
-                    ? { ...cartItem, quantity: cartItem.quantity + 1 } 
+            const updatedCartItems = cartItems.map(cartItem =>
+                cartItem.title === item.title
+                    ? { ...cartItem, quantity: cartItem.quantity + 1 }
                     : cartItem
             );
             setCartItems(updatedCartItems);
@@ -30,16 +30,16 @@ function OrderOnline() {
         }
         setTotalPrice(prevTotal => prevTotal + price);
     };
-    
+
     const removeFromCart = (item) => {
         const price = parseFloat(item.price);
         const existingItem = cartItems.find(cartItem => cartItem.title === item.title);
-        
+
         if (existingItem) {
             if (existingItem.quantity > 1) {
-                const updatedCartItems = cartItems.map(cartItem => 
-                    cartItem.title === item.title 
-                        ? { ...cartItem, quantity: cartItem.quantity - 1 } 
+                const updatedCartItems = cartItems.map(cartItem =>
+                    cartItem.title === item.title
+                        ? { ...cartItem, quantity: cartItem.quantity - 1 }
                         : cartItem
                 );
                 setCartItems(updatedCartItems);
@@ -49,8 +49,30 @@ function OrderOnline() {
             }
             setTotalPrice(prevTotal => prevTotal - price);
         }
-    }; 
-    
+    };
+
+    const getFavoriteFood = (food) => {
+        if (food.length === 0) {
+            return null;
+        }
+        let favoriteFood = food[0];
+        for (let i = 1; i < food.length; i++) {
+            if (food[i].quantity > favoriteFood.quantity) {
+                favoriteFood = food[i];
+            }
+        }
+        return favoriteFood;
+    };
+
+    useEffect(() => {
+        const usersTopFood = getFavoriteFood(cartItems);
+        if (usersTopFood) {
+            localStorage.setItem('favoriteFood', JSON.stringify(usersTopFood));
+        } else {
+            localStorage.removeItem('favoriteFood');
+        }
+    }, [cartItems]);
+
     const payNow = () => {
         if (localStorage.getItem('token') != null) {
             localStorage.setItem('totalPrice', String(totalPrice));
@@ -69,45 +91,45 @@ function OrderOnline() {
                     <div>
                         <h2 className='OrderOnline-AppetizerTitle'>Appetizers</h2>
                         {appetizers.map((item, index) => (
-                            <MenuItem 
-                                key={index} 
-                                title={item.title} 
-                                description={item.description} 
-                                image={item.image} 
-                                price={item.price} 
-                                calories={item.calories} 
+                            <MenuItem
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                image={item.image}
+                                price={item.price}
+                                calories={item.calories}
                                 allergens={item.allergens}
-                                addToCart={addToCart} 
+                                addToCart={addToCart}
                                 removeFromCart={removeFromCart}
                             />
                         ))}
 
                         <h2 className='OrderOnline-PastaTitle'>Pasta</h2>
                         {pasta.map((item, index) => (
-                            <MenuItem 
-                                key={index} 
-                                title={item.title} 
-                                description={item.description} 
-                                image={item.image} 
-                                price={item.price} 
-                                calories={item.calories} 
+                            <MenuItem
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                image={item.image}
+                                price={item.price}
+                                calories={item.calories}
                                 allergens={item.allergens}
-                                addToCart={addToCart} 
+                                addToCart={addToCart}
                                 removeFromCart={removeFromCart}
                             />
                         ))}
 
                         <h2 className='OrderOnline-DessertsTitle'>Desserts</h2>
                         {desserts.map((item, index) => (
-                            <MenuItem 
-                                key={index} 
-                                title={item.title} 
-                                description={item.description} 
-                                image={item.image} 
-                                price={item.price} 
-                                calories={item.calories} 
+                            <MenuItem
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                image={item.image}
+                                price={item.price}
+                                calories={item.calories}
                                 allergens={item.allergens}
-                                addToCart={addToCart} 
+                                addToCart={addToCart}
                                 removeFromCart={removeFromCart}
                             />
                         ))}
@@ -120,7 +142,7 @@ function OrderOnline() {
                         <ul className='TicketCart-List'>
                             {cartItems.map((cartItem, index) => (
                                 <li key={index} className='TicketCart-Item'>
-                                    {cartItem.title} 
+                                    {cartItem.title}
                                     <h4 className='TicketCart-Quantity'>Quantity: {cartItem.quantity}</h4>
                                 </li>
                             ))}
