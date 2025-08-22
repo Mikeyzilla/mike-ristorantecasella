@@ -143,7 +143,7 @@ function Reservations() {
                             <button className="BackButton" onClick={() => setShowCalendarLayout(true)}>
                                 ← Back to Calendar
                             </button>
-                            <h1>Restaurant Reservations Map</h1>
+                            <h1 className="RestaurantResTitle">Reservations for Mike's Ristorante</h1>
                             <div className="SlotHeader">
                                 <button className="TimeArrow" onClick={prevHour}>{"<"}</button>
                                 <div className="TimeReadout">{hourAsString}</div>
@@ -184,6 +184,7 @@ function Reservations() {
                                                             <form onSubmit={scheduleReservation}>
                                                                 <input
                                                                     type="number"
+                                                                    className="PartyUp"
                                                                     required
                                                                     onChange={(e) => setPartySize(Number(e.target.value))}
                                                                 />

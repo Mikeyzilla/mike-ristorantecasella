@@ -1,7 +1,8 @@
 .App {
   background-color: burlywood;
   min-height: 100vh;
-  padding-bottom: 80px;            /* NEW */
+  padding-bottom: 80px;      
+  font-family: "Italiana";
 }
 
 .PayNow-Page {
