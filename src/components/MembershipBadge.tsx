@@ -32,19 +32,19 @@ function MembershipBadge() {
 
     const determineMembershipBadgeImage = () => {
         if (membershipTier === "Amici") {
-            setMembershipBadge("url('../../public/Amici.png')");
+            setMembershipBadge("Amici");
         } else if (membershipTier === "Famiglia") {
-            setMembershipBadge("url('../../public/Famiglia.png')");
+            setMembershipBadge("Famiglia");
         } else if (membershipTier === "Nonna's Table") {
-            setMembershipBadge("url('../../public/Nonna.png')");
+            setMembershipBadge("Nonna");
         } else if (membershipTier === "Villa di Lusso") {
-            setMembershipBadge("url('../../public/VillaDiLusso.png')");
+            setMembershipBadge("Villa");
         } else if (membershipTier === "The Don") {
-            setMembershipBadge("url('../../public/TheDon.png')");
+            setMembershipBadge("Don");
         }
     };
 
-    const determineNextTier = () =>  {
+    const determineNextTier = () => {
         if (membershipTier === "Amici") {
             setFollowingTier("Famiglia");
         } else if (membershipTier === "Famiglia") {
@@ -57,7 +57,7 @@ function MembershipBadge() {
             setFollowingTier("Max Tier Reached!");
         }
     };
-    
+
     const determineFollowingReward = () => {
         if (membershipTier === "Amici") {
             setFollowingReward("Complimentary appetizer every visit!");
@@ -82,10 +82,15 @@ function MembershipBadge() {
         determineFollowingReward();
     }, [membershipTier]);
 
+    useEffect(() => {
+        if (membershipBadge) {
+            localStorage.setItem("membershipBadge", membershipBadge);
+        }
+    }, [membershipBadge]);
+
     return (
         <div className="MembershipBadgeArea">
             <div className="MembershipTitle">Membership Tier: {membershipTier}</div>
-            <div className="MembershipBadgeImage" style={{ backgroundImage: membershipBadge }}></div>
             <div className="RedeemableReward">{membershipReward}</div>
             <div className="FollowingTier">Next Tier: {followingTier}</div>
             <div className="UpcomingReward">Upcoming Reward: {followingReward}</div>

@@ -24,8 +24,6 @@ MembershipBadge
 
 Reservations Page
 
-Pay Now
-
 Development Transparency
 
 Some syntax help was obtained using AI tools. However:

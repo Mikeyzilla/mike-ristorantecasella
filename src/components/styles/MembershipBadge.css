@@ -1,0 +1,11 @@
+.MembershipBadgeArea {
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.MembershipTitle {
+    font-size: 24px;
+}

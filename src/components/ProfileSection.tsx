@@ -128,7 +128,6 @@ function ProfileSection() {
             <div className='Profile-Section'>
                 <div className='TabSwitcher'>
                     <div onClick={() => setActiveTab("settings")}>Settings</div>
-                    <div onClick={() => setActiveTab("orders")}>Orders</div>
                     <div onClick={() => setActiveTab("favorites")}>Favorites</div>
                 </div>
                 <ProfileHeader></ProfileHeader>
