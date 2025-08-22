@@ -1,10 +1,9 @@
 .App {
   background-color: burlywood;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 80px;            /* NEW */
 }
 
 .PayNow-Page {
-  overflow: auto;   
   height: 100%;      
 }

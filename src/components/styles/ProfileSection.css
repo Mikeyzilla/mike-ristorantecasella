@@ -1,25 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 :root {
-  --content-max: 780px;   
-  --content-pad: 16px;    
-  --stack-gap: 16px;    
+  --content-max: 780px;
+  --content-pad: 16px;
+  --stack-gap: 16px;
 }
+
 .App.Page--scrollable {
-  overflow: auto;   
+  overflow: auto; 
 }
+
 .Profile-Section {
   font-family: "Italiana";
   margin-top: 110px;
   display: flex;
   flex-direction: column;
-  align-items: center;        
+  align-items: center;
   padding: 0 var(--content-pad);
 }
 
 .Profile-Section > * {
   width: 100%;
-  max-width: var(--content-max);  
+  max-width: var(--content-max);
 }
 
 .stack {
@@ -35,18 +37,17 @@
 
 .TabSwitcher {
   display: flex;
-  flex-direction: row;     
-  justify-content: space-evenly; 
+  justify-content: space-evenly;
   align-items: center;
-  gap: 12px;                  
+  gap: 12px;
   width: 100%;
   font-weight: bolder;
-  margin-bottom: 20px;    
+  margin-bottom: 20px;
 }
 
 .TabSwitcher > div {
-  flex: 1;                
-  text-align: center;      
+  flex: 1;
+  text-align: center;
   padding: 12px 0;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -57,50 +58,100 @@
   background: #fafafa;
 }
 
-.Profile-Section form {
+.PasswordArea {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: column;  
+  align-items: center;    
+  justify-content: center;  
+  text-align: center;
+  background-color:  rgb(13, 9, 43);
+  color: white;
+  border-radius: 20px;      
+  margin-top: 20px;
 }
 
-.Profile-Section input,
-.Profile-Section select,
-.Profile-Section button {
+.changePasswordForm {
+  width: fit-content;
+}
+
+.CurrentPasswordHolder,
+.NewPasswordHolder,
+.PasswordSwitcher {
   font: inherit;
   padding: 10px 12px;
-  border: 1px solid #ddd;
   border-radius: 8px;
 }
 
-.Profile-Section button {
+.CurrentPasswordHolder,
+.NewPasswordHolder {
+  border: 1px solid #ddd;
+   text-align: center;
+}
+
+.PasswordSwitcher {
   cursor: pointer;
   border: 1px solid #bbb;
   background: #fff;
 }
 
-.Profile-Section ol,
-.Profile-Section ul {
+.changePasswordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.BalanceViewer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.DietaryPreferencesArea {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.DietaryPreferencesTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.AllergenList {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding-left: 20px;
-  margin: 0;
 }
 
-li {
+.AllergenItem {
   font-size: 20px;
-  margin: 0;                
   font-weight: 600;
   cursor: pointer;
 }
 
-.Profile-SignoutButton,
-.Profile-Section button[data-variant="danger"] {
-  width: 100%;
-  border-color: #e0e0e0;
-  background: #fff0f0;
+.AllergenItem:hover {
+  color: yellow;
 }
 
-h1, h2, h3 {
-  margin: 0 0 8px;
+.ScaryButton {
+  margin-top: 30px;
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  background: #fff0f0;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.FavoriteFoodArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 300px;
 }

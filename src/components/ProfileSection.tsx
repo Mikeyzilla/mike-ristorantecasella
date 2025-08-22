@@ -32,7 +32,7 @@ function ProfileSection() {
             return <p>No favorite movie yet.</p>;
         }
         return (
-            <div>
+            <div className='FavoriteFoodArea'>
                 <MenuItem
                     title={myFavoriteFood.title}
                     description={myFavoriteFood.description}
@@ -133,23 +133,28 @@ function ProfileSection() {
                 <ProfileHeader></ProfileHeader>
                 {activeTab === "settings" && (
                     <div>
-                        <form onSubmit={(e) => { e.preventDefault(); changePassword(); }}>
-                            <input type='password' value={currentPass} onChange={(e) => setCurrentPass(e.target.value)} placeholder='Current Password'></input>
-                            <input type='password' value={futurePass} onChange={(e) => setFuturePass(e.target.value)} placeholder='New Password'></input>
-                            <button type='submit'>Change Password</button>
-                        </form>
-                        <h1>Your current balance is: {balance}</h1>
-                        <h1>Any Dietary Preferences? Click on the ones from the available list below and we'll highlight the menu items inside view menu that contain those, so you can avoid them!</h1>
-                        <form>
-                            <ol>
-                                <li onClick={() => togglePreference("Peanuts & Treenuts")}>Peanuts & Treenuts</li>
-                                <li onClick={() => togglePreference("Dairy")}>Dairy</li>
-                                <li onClick={() => togglePreference("Shellfish")}>Shellfish</li>
-                                <li onClick={() => togglePreference("Wheat / Soy / Sesame")}>Wheat / Soy / Sesame</li>
-                                <li onClick={() => togglePreference("Gluten")}>Gluten</li>
-                            </ol>
-                        </form>
-                        <button onClick={deleteData}>DELETE ACCOUNT</button>
+                        <div className='PasswordArea'>
+                            <h1>Change your Password Below!</h1>
+                            <form className="changePasswordForm" onSubmit={(e) => { e.preventDefault(); changePassword(); }}>
+                                <input className="CurrentPasswordHolder" type='password' value={currentPass} onChange={(e) => setCurrentPass(e.target.value)} placeholder='Current Password'></input>
+                                <input className='NewPasswordHolder' type='password' value={futurePass} onChange={(e) => setFuturePass(e.target.value)} placeholder='New Password'></input>
+                                <button className='PasswordSwitcher' type='submit'>Change Password</button>
+                            </form>
+                        </div>
+                        <div className='BalanceViewer'>Your current balance is: {balance}</div>
+                        <div className='DietaryPreferencesArea'>
+                            <h1 className='DietaryPreferencesTitle'>Any Dietary Preferences? Click on the ones from the available list below and we'll highlight the menu items inside view menu that contain those, so you can avoid them!</h1>
+                            <form className='AllergenListArea'>
+                                <ol className='AllergenList'>
+                                    <li className='AllergenItem' onClick={() => togglePreference("Peanuts & Treenuts")}>Peanuts & Treenuts</li>
+                                    <li className='AllergenItem' onClick={() => togglePreference("Dairy")}>Dairy</li>
+                                    <li className='AllergenItem' onClick={() => togglePreference("Shellfish")}>Shellfish</li>
+                                    <li className='AllergenItem' onClick={() => togglePreference("Wheat / Soy / Sesame")}>Wheat / Soy / Sesame</li>
+                                    <li className='AllergenItem' onClick={() => togglePreference("Gluten")}>Gluten</li>
+                                </ol>
+                            </form>
+                        </div>
+                        <button className="ScaryButton" onClick={deleteData}>DELETE ACCOUNT</button>
                     </div>
                 )}
                 {activeTab === "favorites" && (

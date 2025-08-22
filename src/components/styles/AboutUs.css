@@ -65,3 +65,15 @@
 .indent-left {
     margin-left: 270px;
 }
+.AboutUs-TextArea {
+    margin-top: 100px;         
+    font-family: "Italiana";
+    font-size: 26px;
+    overflow: visible;         
+    max-height: none;         
+}
+
+/* keep your design choice of overlap */
+.AboutUs-Description {
+    margin-top: -100px;        
+}

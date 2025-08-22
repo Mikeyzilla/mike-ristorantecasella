@@ -20,14 +20,14 @@ const membershipBadge = localStorage.getItem("membershipBadge") || "";
     return (
         <div className="Profile-Header">
             <div className="MainFunctionalityArea">
-                <button onClick={goHome}>Home</button>
+                <button className='HomeButton' onClick={goHome}>Home</button>
 
                 <div className="TitleBlock">
                     <h1>{nameOfUser}'s Profile</h1>
                     <p className="Greeting">Ciao, {nameOfUser}!</p>
                 </div>
 
-                <button onClick={signOut}>Sign Out</button>
+                <button className='SignOutButton' onClick={signOut}>Sign Out</button>
             </div>
 
             <div className="UserProfile">

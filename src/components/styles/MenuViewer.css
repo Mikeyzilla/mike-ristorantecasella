@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 .Menu-Page {
-    overflow-y: auto;
-    max-height: 100vh;
-    overflow-x: hidden;
+  overflow: visible;
+  max-height: none;     
+  padding-bottom: 80px;
 }
 
 .Menu-Section {
-   position: relative;
-   top: 100px;
-   transform: scale(0.75);  /* shrink to 75% of original size */
-   transform-origin: top center; /* keeps it centered under the title */
+  margin-top: 100px;
+  transform: scale(0.75);
+  transform-origin: top center;
 }
 
 .Menu-Title-Area {
@@ -45,5 +44,10 @@
     font-family: "Italiana";
     font-size: 44px;
     position: relative;
-    left: 80px;   /* moves them to the right */
+    left: 80px;
+}
+
+.MenuContent {
+  transform: translateX(-80px);  
+  transform-origin: top left;
 }

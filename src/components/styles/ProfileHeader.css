@@ -7,6 +7,11 @@
   gap: 12px;
 }
 
+.HomeButton, .SignOutButton {
+  background-color:  rgb(13, 9, 43);
+  color: white;
+}
+
 .TitleBlock {
   flex: 1 1 70%;
   text-align: center;

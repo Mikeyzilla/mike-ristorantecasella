@@ -1,10 +1,18 @@
-/* ========== Global / Page Shell ========== */
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 .PayNow-Page {
   margin-top: 110px;
   font-family: "Italiana";
   color: white;
+}
+
+.Hint {
+  display: block;        
+  text-align: center;   
+  margin: 8px auto 0;   
+  width: 100%;           
+  color: #ffcccc;        
+  font-weight: bold;     
 }
 
 .PayNow-TitleArea {
