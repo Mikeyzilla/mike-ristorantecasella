@@ -17,7 +17,6 @@ function ProfileHeader() {
         navigate("/");
     }
 
-
     return (
         <div className="Profile-Header">
             <div className="MainFunctionalityArea">

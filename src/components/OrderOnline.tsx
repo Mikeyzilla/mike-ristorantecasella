@@ -76,6 +76,7 @@ function OrderOnline() {
     const payNow = () => {
         if (localStorage.getItem('token') != null) {
             localStorage.setItem('totalPrice', String(totalPrice));
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
             redirect('/Payment');
         }
     };

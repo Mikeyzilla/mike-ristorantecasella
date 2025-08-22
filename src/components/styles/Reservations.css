@@ -1,0 +1,181 @@
+.Table.Reserved {
+  background-image: url("../../../public/ItalianTable.png");
+}
+
+.CalendarWrapper {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.Reservations {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ReservationsContent {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;     
+  justify-content: center;      
+  padding-top: clamp(200px, 10vh, 120px);
+  padding-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.RestaurantMapWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;           
+  justify-content: flex-start;    
+  width: min(900px, 90vw);      
+  min-height: 70vh;               
+  background-color: aqua;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.MapHeader { 
+  display: flex; 
+  gap: 12px; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%;
+  margin-bottom: 16px;          
+}
+
+.SlotHeader { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+}
+
+.RestaurantMap {
+  background-color: brown;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 12%;
+  min-height: 50vh;
+  overflow: visible;          
+}
+
+.Table { 
+  background: red; 
+  position: relative; 
+  overflow: visible;            
+}
+
+.BackButton, 
+.TimeArrow {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+  padding: 0.25rem 0.5rem;
+}
+
+
+.InfoModal {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;                 
+  transform: translateX(-50%) translateY(-10px) scale(0.7);
+  transform-origin: bottom center;
+  min-width: 240px;
+  max-width: 320px;
+  background: #101418;          
+  color: #f3f6f9;
+  border-radius: 14px;          
+  padding: 12px 14px;
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(255,255,255,0.06); 
+  z-index: 20;
+}
+
+.InfoModal::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;                
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #101418; 
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+}
+
+.InfoModal__content h1 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+
+.InfoModal__content p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.InfoModal.available {
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(0, 204, 153, 0.35);
+}
+
+.InfoModal.reserved {
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(255, 95, 109, 0.35);
+}
+
+.InfoModal input[type="number"],
+.InfoModal select {
+  width: 100%;
+  margin: 8px 0 12px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: #0c1116;
+  color: #f3f6f9;
+  outline: none;
+}
+
+.InfoModal {
+  display: block;
+  width: fit-content;
+  margin: 12px auto 0;    
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: darkblue;
+  cursor: pointer;
+}
+
+.SubmitCannoli {
+  background-image: url("../../../public/SubmitCannoli.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  cursor: pointer;
+}
+
+.SubmitCannoli {
+  background-image: url("../../../public/SubmitCannoli.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 120px;        
+  height: 48px;
+  border: none;
+  outline: none;
+  display: block;
+  margin: 12px auto 0;   
+  cursor: pointer;
+}

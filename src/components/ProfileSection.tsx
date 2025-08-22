@@ -4,10 +4,10 @@ import '../components/styles/ProfileSection.css';
 import NavigationBar from './NavigationBar';
 import axios from 'axios';
 import ProfileHeader from './ProfileHeader';
+import MenuItem from './MenuItem';
 
 const allergenList = ['Peanuts & Treenuts', 'Dairy', 'Shellfish', 'Wheat / Soy / Sesame', 'Gluten'];
 type Allergen = (typeof allergenList)[number];
-
 
 function ProfileSection() {
     const navigate = useNavigate();
@@ -18,6 +18,34 @@ function ProfileSection() {
     const [balance, setBalance] = useState("");
     const [dietaryPreferences, setDietaryPreferences] = useState<Allergen[]>([]);
     const nameOfUser = localStorage.getItem('username');
+
+
+    const determineFavoriteFood = () => {
+        let myFavoriteFood = null;
+        try {
+            const usersFavoriteFood = localStorage.getItem('favoriteFood');
+            myFavoriteFood = usersFavoriteFood ? JSON.parse(usersFavoriteFood) : null;
+        } catch {
+            myFavoriteFood = null;
+        }
+        if (!myFavoriteFood) {
+            return <p>No favorite movie yet.</p>;
+        }
+        return (
+            <div>
+                <MenuItem
+                    title={myFavoriteFood.title}
+                    description={myFavoriteFood.description}
+                    image={myFavoriteFood.image}
+                    price={myFavoriteFood.price}
+                    calories={myFavoriteFood.calories}
+                    allergens={myFavoriteFood.allergens}
+                    addToCart={() => { }}
+                    removeFromCart={() => { }}
+                />
+            </div>
+        );
+    }
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -94,16 +122,14 @@ function ProfileSection() {
         );
     };
 
-
     return (
-        <div>
+        <div className="App Page--scrollable">
             <NavigationBar />
             <div className='Profile-Section'>
                 <div className='TabSwitcher'>
                     <div onClick={() => setActiveTab("settings")}>Settings</div>
                     <div onClick={() => setActiveTab("orders")}>Orders</div>
                     <div onClick={() => setActiveTab("favorites")}>Favorites</div>
-                    <div onClick={() => setActiveTab("reservations")}>Reservations</div>
                 </div>
                 <ProfileHeader></ProfileHeader>
                 {activeTab === "settings" && (
@@ -127,29 +153,8 @@ function ProfileSection() {
                         <button onClick={deleteData}>DELETE ACCOUNT</button>
                     </div>
                 )}
-                {activeTab === "orders" && (
-                    <div>
-                        - Orders
-                        - Last order (items, “Reorder”)
-                        - View Order Status of each order: Ordered to Order Received to Preparing to Delivering to Arrived
-                        - Points balance, progress bar to next perk
-                        - Tier benefits grid (perks with icons)
-                    </div>
-                )}
                 {activeTab === "favorites" && (
-                    <div>
-                        //to get a favorite, set the item in the cart with the highest quantity to be the favorite (use local storage)
-                    </div>
-                )}
-                {activeTab === "reservations" && (
-                    <div>
-                        - reservations
-                        - Next reservation (date, time, party; “View / Modify / Cancel”)
-                        - Reservations
-                        - Upcoming reservations list (cards)
-                        - Past reservations (collapsible)
-                        - “Get restaurant address”
-                    </div>
+                    determineFavoriteFood()
                 )}
             </div>
         </div>

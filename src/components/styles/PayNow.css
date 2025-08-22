@@ -5,6 +5,10 @@
     font-family: "Italiana";
 }
 
+.App {
+    overflow: auto;
+}
+
 .PayNow-TitleArea {
     display: flex;
     flex-direction: column;

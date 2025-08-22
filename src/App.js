@@ -9,6 +9,7 @@ import './App.css';
 import LoginPage from './components/LoginPage';
 import Registration from './components/Registration';
 import PayNow from './components/PayNow';
+import Reservations from './components/Reservations';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/Login' element={<LoginPage/>} />
           <Route path='/Registration' element={<Registration/>} />
           <Route path='/Payment' element={<PayNow />} />
+          <Route path='/Reservation' element={<Reservations />} />
         </Routes>
       </Router>
     </div>

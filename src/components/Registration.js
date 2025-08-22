@@ -26,21 +26,27 @@ function Registration() {
     };
 
     const checkForStrongPassword = (password) => {
-        if (password.length > 8 && password.test(/[!@#$%^&*:;?~]/) && password.test(/[A-Z]/)) {
+        if (
+            password.length > 8 &&
+            /[!@#$%^&*:;?~]/.test(password) &&
+            /[A-Z]/.test(password)
+        ) {
             setPasswordStrength("good");
         }
-    }
+    };
 
     const checkForStrongAddress = (address) => {
         const trimmed = address.trim();
         setAddressStrength(addressRegex.test(trimmed) ? 'good' : 'bad');
     };
-
     const checkForStrongBalance = (balance) => {
-        if (balance > 0 && balance.test(/[A-Z, a-z]/) === false) {
+        if (
+            Number(balance) > 0 &&          
+            !/[A-Za-z]/.test(balance)       
+        ) {
             setBalanceStrength("good");
         }
-    }
+    };
 
     useEffect(() => {
         setAllStrong(

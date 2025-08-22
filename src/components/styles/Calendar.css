@@ -1,0 +1,95 @@
+
+:root {
+  --cal-bg: #0b1e39;        
+  --cal-card: #0f2b54;      
+  --cal-accent: #f7f7f7;    
+  --cal-accent-2: #ffecb3;
+  --cal-text: #f5f7fb;
+  --cal-muted: #a7b3c7;
+  --ring: #f3c969;         
+}
+
+.CalendarLayout {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  color: var(--cal-text);
+}
+
+.CalendarLayout h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.25rem, 2.2vw + 0.75rem, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--cal-accent);
+}
+
+.CalendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25) inset, 0 10px 24px rgba(0,0,0,0.18);
+  backdrop-filter: blur(2px);
+}
+
+.DayCell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;                  
+  min-height: 44px;                     
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  background: var(--cal-card);
+  color: var(--cal-text);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background 120ms ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.DayNumber {
+  font-size: clamp(0.9rem, 0.7vw + 0.7rem, 1.05rem);
+}
+
+.DayCell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  border-color: rgba(255,255,255,0.16);
+  background: linear-gradient(180deg, var(--cal-card), rgba(255,255,255,0.04));
+}
+
+.DayCell:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35) inset;
+}
+
+.DayCell:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--cal-card),
+    0 0 0 4px var(--ring);
+}
+
+.DayCell.is-today {
+  border-color: var(--ring);
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(243, 201, 105, 0.18), transparent 55%),
+    var(--cal-card);
+  position: relative;
+}
+
+.DayCell.is-today::after {
+  content: "Today";
+  position: absolute;
+  bottom: 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--cal-accent-2);
+  opacity: 0.95;
+}

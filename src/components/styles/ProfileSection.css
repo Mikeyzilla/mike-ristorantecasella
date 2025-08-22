@@ -1,29 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
+:root {
+  --content-max: 780px;   /* max readable width */
+  --content-pad: 16px;    /* side padding */
+  --stack-gap: 16px;      /* default vertical gap */
+}
+.App.Page--scrollable {
+  overflow: auto;   /* override for this one */
+}
 .Profile-Section {
-    font-family: "Italiana";
-    margin-top: 110px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: "Italiana";
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* center the whole column */
+  padding: 0 var(--content-pad);
 }
 
+.Profile-Section > * {
+  width: 100%;
+  max-width: var(--content-max);  /* lock content width */
+}
+
+/* Generic vertical stack utility */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap);
+}
+
+/* Page title */
 .Profile-Title {
-    font-size: 44px;
-    margin-bottom: 150px;
+  font-size: 44px;
+  margin: 0 0 24px;
+}
+
+/* Tabs become a simple column too */
+.TabSwitcher {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.TabSwitcher > div {
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.TabSwitcher > div:hover {
+  background: #fafafa;
+}
+
+/* Make forms columnar and full-width */
+.Profile-Section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Profile-Section input,
+.Profile-Section select,
+.Profile-Section button {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.Profile-Section button {
+  cursor: pointer;
+  border: 1px solid #bbb;
+  background: #fff;
+}
+
+/* Favorite / preferences list stacked */
+.Profile-Section ol,
+.Profile-Section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 20px;
+  margin: 0;
 }
 
 li {
-    font-size: 36px;
-    margin-bottom: 100px;
-    font-weight: bolder;
+  font-size: 20px;
+  margin: 0;                 /* remove large default spacing */
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.Profile-SignoutButton {
-    width: 300px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 36px;
-    margin-top: 100px;
+/* Signout / destructive actions */
+.Profile-SignoutButton,
+.Profile-Section button[data-variant="danger"] {
+  width: 100%;
+  border-color: #e0e0e0;
+  background: #fff0f0;
+}
+
+/* Optional: section headings for clarity */
+h1, h2, h3 {
+  margin: 0 0 8px;
 }
