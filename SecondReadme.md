@@ -1,6 +1,50 @@
-Hello! This is Mike. This app is in progress, meaning that it's not currently 100% done. I still need to implement paying for the bill and test that out on the frontend - a checkout system after ordering food. After that, I need to update the profile section and finally implement a reservations page to book reservations. There are a couple things to note, firstly that AI was used in helping me write some of the code for this app. Before this project, I knew React and was proficient in React, but there were some things that I wanted to hone in on and perfect / address any discrepancies in my logic and fundamental understanding. The result is that not only did I learn what I needed in this project, but I can replicate any of the code here and I understand exactly what to do next time. 
+Ristorante Casella App
+Project Status
 
-In order to run this app, you will need a few things. Firstly, you will need to make a DB that meets all of the requirements and establish connection to it in the backend server. You will need a tsConfig file since I used TSX files alongside my JS files. Then, because it requires JWT, you will need to make a JWT secret code. 
+⚠️ Work in Progress
+This app is not yet 100% complete. The following still need to be tested:
+
+Submit order
+
+Change password (including login after updating)
+
+Delete account
+
+Make reservation
+
+Get reservation (verify that created reservations appear)
+
+Styling is also pending for the following pages:
+
+ProfileSection
+
+ProfileHeader
+
+MembershipBadge
+
+Reservations Page
+
+Pay Now
+
+Development Transparency
+
+Some syntax help was obtained using AI tools. However:
+
+I made sure to fully understand the logic and syntax.
+
+I re-implemented similar code independently to build muscle memory.
+
+All features I received help with were thoroughly tested and validated.
+
+Requirements
+
+To run this app, you’ll need:
+
+A database (SQL-based) that meets all schema requirements, connected through the backend.
+
+A tsconfig.json file (project uses both .tsx and .js files).
+
+A JWT secret defined for authentication.
 
 To run frontend: npm run start
 To run backend: node backend.js
