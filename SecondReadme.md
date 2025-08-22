@@ -1,28 +1,21 @@
 Ristorante Casella App
-Project Status
 
-⚠️ Work in Progress
-This app is not yet 100% complete. The following still need to be tested:
+Goals:
+Welcome to Ristorante Casella —a full-stack demo restaurant website built to showcase what a modern dining experience online could look like.
 
-Submit order
+With this project, you can:
 
-Change password (including login after updating)
+Create an account & log in
 
-Delete account
+View and edit profile information
 
-Make reservation
+Make reservations
 
-Get reservation (verify that created reservations appear)
+Order food online
 
-Styling is also pending for the following pages:
+Of course, the restaurant isn’t real (neither is the food unfortunately), but the features are! This project is meant to serve as a portfolio demo of what a professional restaurant website could be.
 
-ProfileSection
-
-ProfileHeader
-
-MembershipBadge
-
-Reservations Page
+Hope you enjoy exploring!
 
 Development Transparency
 

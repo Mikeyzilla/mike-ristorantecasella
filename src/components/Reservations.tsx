@@ -48,13 +48,17 @@ function Reservations() {
     };
 
     const todaysReservations = async () => {
-        try {
-            const res = await axios.get('http://localhost:5000/getReservationsForTheDay', {
-                params: { todaysDate: selectedDate }
-            });
-            setReservations(Array.isArray(res.data) ? res.data : []);
-        } catch (err) {
-            console.error('Error grabbing reservations: ', err);
+        const loggedInStatus = localStorage.getItem('token');
+        if (loggedInStatus === null) return;
+        else {
+            try {
+                const res = await axios.get('http://localhost:5000/getReservationsForTheDay', {
+                    params: { todaysDate: selectedDate }
+                });
+                setReservations(Array.isArray(res.data) ? res.data : []);
+            } catch (err) {
+                console.error('Error grabbing reservations: ', err);
+            }
         }
     }
 
@@ -130,8 +134,8 @@ function Reservations() {
             <div className="ReservationsContent"
                 style={{
                     paddingTop: showCalendarLayout
-                        ? "24px"                
-                        : "200px"               
+                        ? "24px"
+                        : "200px"
                 }}>
                 {showCalendarLayout ? (
                     <div className="CalendarWrapper">
