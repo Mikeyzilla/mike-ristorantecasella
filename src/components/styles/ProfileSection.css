@@ -1,57 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 :root {
-  --content-max: 780px;   /* max readable width */
-  --content-pad: 16px;    /* side padding */
-  --stack-gap: 16px;      /* default vertical gap */
+  --content-max: 780px;   
+  --content-pad: 16px;    
+  --stack-gap: 16px;    
 }
 .App.Page--scrollable {
-  overflow: auto;   /* override for this one */
+  overflow: auto;   
 }
 .Profile-Section {
   font-family: "Italiana";
   margin-top: 110px;
   display: flex;
   flex-direction: column;
-  align-items: center;         /* center the whole column */
+  align-items: center;        
   padding: 0 var(--content-pad);
 }
 
 .Profile-Section > * {
   width: 100%;
-  max-width: var(--content-max);  /* lock content width */
+  max-width: var(--content-max);  
 }
 
-/* Generic vertical stack utility */
 .stack {
   display: flex;
   flex-direction: column;
   gap: var(--stack-gap);
 }
 
-/* Page title */
 .Profile-Title {
   font-size: 44px;
   margin: 0 0 24px;
 }
 
-/* Tabs become a simple column too */
 .TabSwitcher {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;     
+  justify-content: space-evenly; 
+  align-items: center;
+  gap: 12px;                  
+  width: 100%;
+  margin-bottom: 20px;    
 }
+
 .TabSwitcher > div {
-  padding: 12px 14px;
+  flex: 1;                
+  text-align: center;      
+  padding: 12px 0;
   border: 1px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
 }
+
 .TabSwitcher > div:hover {
   background: #fafafa;
 }
 
-/* Make forms columnar and full-width */
 .Profile-Section form {
   display: flex;
   flex-direction: column;
@@ -73,7 +77,6 @@
   background: #fff;
 }
 
-/* Favorite / preferences list stacked */
 .Profile-Section ol,
 .Profile-Section ul {
   display: flex;
@@ -85,12 +88,11 @@
 
 li {
   font-size: 20px;
-  margin: 0;                 /* remove large default spacing */
+  margin: 0;                
   font-weight: 600;
   cursor: pointer;
 }
 
-/* Signout / destructive actions */
 .Profile-SignoutButton,
 .Profile-Section button[data-variant="danger"] {
   width: 100%;
@@ -98,7 +100,6 @@ li {
   background: #fff0f0;
 }
 
-/* Optional: section headings for clarity */
 h1, h2, h3 {
   margin: 0 0 8px;
 }

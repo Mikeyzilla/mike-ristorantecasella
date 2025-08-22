@@ -100,76 +100,93 @@ function PayNow() {
     };
 
     return (
-        <div className='App PayNow-Page'>
+        <div className='PayNow-Page'>
             <NavigationBar />
             <div className='PayNow-TitleArea'>
                 <h2 className='PayNow-Title'>Pay Now</h2>
                 <h3 className='PayNow-TotalTitle'>Your total amount is: ${totalPrice.toFixed(2)}</h3>
             </div>
-            <label>Check this box if you want Delivery!</label>
-            <input className='PickupOrDeliveryButton'
-                type="checkbox"
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-            />
+            <div className='OrderInfoArea'>
+                <div className='OrderFormHeader'>
+                    <div className='HeaderLeft'></div>
+                    <div className='OrderTitle'>Pickup / Delivery Information</div>
+                    <label className='DeliveryToggle'>Check this box if you want Delivery!
+                        <input className='PickupOrDeliveryButton'
+                            type="checkbox"
+                            checked={checked}
+                            onChange={(e) => setChecked(e.target.checked)}
+                        />
+                    </label>
+                </div>
+                {!checked && (
+                    <div className='Gap'></div>
+                )}
+                {checked && (
+                    <div className='DeliverySection'>
+                        <h3 className="DeliveryHeading">How should we reach you?</h3>
 
-            {checked && (
-                <div className='DeliverySection'>
-                    <h1>Delivery</h1>
-                    <p>How should we reach you?</p>
+                        <div className='DeliveryMethod'>
+                            <div className="FormRow">
+                                <label htmlFor='gateCode'>Gate Code (optional)</label>
+                                <input
+                                    id='gateCode'
+                                    type='text'
+                                    placeholder='Gate Code'
+                                    value={gateCode}
+                                    onChange={(e) => setGateCode(e.target.value)}
+                                />
+                                <div></div>
+                            </div>
+                            
+                            <fieldset className='Field' style={{ border: 'none', padding: 0, width: '100%' }}>
+                                <legend className='ContactLegend'>Contact preference (required)</legend>
 
-                    <div className='DeliveryMethod'>
-                        <div className='Field'>
-                            <label htmlFor='gateCode'>Gate Code (optional)</label>
-                            <input
-                                id='gateCode'
-                                type='text'
-                                placeholder='Gate Code'
-                                value={gateCode}
-                                onChange={(e) => setGateCode(e.target.value)}
-                            />
+                                <label className='RadioRow'>
+                                    <input
+                                        type='radio'
+                                        name='deliveryContact'
+                                        value='ring'
+                                        checked={deliveryOption === 'ring'}
+                                        onChange={() => setDeliveryOption('ring')}
+                                    />
+                                    Ring my doorbell
+                                </label>
+
+                                <label className='RadioRow'>
+                                    <input
+                                        type='radio'
+                                        name='deliveryContact'
+                                        value='door'
+                                        checked={deliveryOption === 'door'}
+                                        onChange={() => setDeliveryOption('door')}
+                                    />
+                                    Leave at doorstep
+                                </label>
+                            </fieldset>
+
+                            {!deliveryOption && (
+                                <div className='Hint'>Please choose one contact preference.</div>
+                            )}
+                        </div>
+                    </div>
+                )}
+
+                {!checked && (
+                    <div className="PickupSection">
+                        <div className="FormRow">
+                            <label htmlFor="pickupAddress">Pickup Street Address</label>
+                            <input id="pickupAddress" type="text" />
+                            <div></div>
                         </div>
 
-                        <fieldset className='Field' style={{ border: 'none', padding: 0 }}>
-                            <legend>Contact preference (required)</legend>
-                            <label className='RadioRow'>
-                                <input
-                                    type='radio'
-                                    name='deliveryContact'
-                                    value='ring'
-                                    checked={deliveryOption === 'ring'}
-                                    onChange={() => setDeliveryOption('ring')}
-                                />
-                                Ring my doorbell
-                            </label>
-
-                            <label className='RadioRow'>
-                                <input
-                                    type='radio'
-                                    name='deliveryContact'
-                                    value='door'
-                                    checked={deliveryOption === 'door'}
-                                    onChange={() => setDeliveryOption('door')}
-                                />
-                                Leave at doorstep
-                            </label>
-                        </fieldset>
-
-                        {!deliveryOption && (
-                            <div className='Hint'>Please choose one contact preference.</div>
-                        )}
+                        <div className="FormRow">
+                            <label htmlFor="pickupName">What name should we have for the order?</label>
+                            <input id="pickupName" type="text" />
+                            <div></div>
+                        </div>
                     </div>
-                </div>
-            )}
-
-            {!checked && (
-                <div className='PickupSection'>
-                    <label htmlFor='pickupAddress'>Pickup Street Address</label>
-                    <input id='pickupAddress' type='text' />
-                    <label htmlFor='pickupName'>What name should we have for the order?</label>
-                    <input id='pickupName' type='text' />
-                </div>
-            )}
+                )}
+            </div>
             <div className='TipSelectorArea'>
                 <h3>Tip</h3>
                 <div className='Field'>
@@ -186,39 +203,43 @@ function PayNow() {
                         <option value='30'>30%</option>
                     </select>
                 </div>
-            </div>
-
-            <div className='YourBalanceAfterTotalAndTipArea'>
                 <p>
                     Your Balance will be <strong>${(balanceAfterExpenses ?? 0).toFixed(2)}</strong> after paying
                 </p>
             </div>
 
             {errorMessage && <p className='error-message'>{errorMessage}</p>}
-            <form className='PayNow-Form' onSubmit={handleSubmit}>
-                <div className='PayNow-IndividualArea'>
-                    <h2>Username</h2>
-                    <input type='text' value={username} readOnly className='PayNow-Input' />
-                </div>
-                <div className='PayNow-IndividualArea'>
-                    <h2>Address</h2>
-                    <input
-                        type='text'
-                        placeholder='Street Address'
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                        required
-                        className='PayNow-Input'
-                    />
-                </div>
-                <button
-                    type='submit'
-                    className='SubmitOrderButton'
-                    disabled={(checked && !deliveryOption) || balanceAfterExpenses < 0}
-                >
-                    Place Order
-                </button>
-            </form>
+            <div className='FinalSection'>
+                <form className='PayNow-Form' onSubmit={handleSubmit}>
+                    <div className='FinalSectionHeader'>
+                        <h1>Final Order Details</h1>
+                    </div>
+
+                    <div className="FormRow">
+                        <label htmlFor="username">Username</label>
+                        <input id="username" type="text" value={username} readOnly className="PayNow-Input" />
+                        <div></div>
+                    </div>
+
+                    <div className="FormRow">
+                        <label htmlFor="address">Address</label>
+                        <input
+                            id="address"
+                            type="text"
+                            placeholder="Street Address"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                            required
+                            className="PayNow-Input"
+                        />
+                        <div></div>
+                    </div>
+
+                    <button type='submit' className='SubmitOrderButton' disabled={balanceAfterExpenses < 0}>
+                        Place Order
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }

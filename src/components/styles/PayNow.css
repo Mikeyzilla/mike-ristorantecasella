@@ -1,93 +1,297 @@
+/* ========== Global / Page Shell ========== */
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 
 .PayNow-Page {
-    margin-top: 110px;
-    font-family: "Italiana";
-}
-
-.App {
-    overflow: auto;
+  margin-top: 110px;
+  font-family: "Italiana";
+  color: white;
 }
 
 .PayNow-TitleArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .PayNow-Title {
-    font-size: 42px;
-    margin-bottom: 0px;
+  font-size: 42px;
+  margin-bottom: 0px;
+  color: black;
 }
 
 .PayNow-TotalTitle {
-    font-size: 42px;
+  font-size: 42px;
+  color: black;
 }
 
 .PayNow-Form {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .PayNow-IndividualArea {
-    display: flex;
-    justify-content: center;
-    margin-left: -100px;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  margin-left: -100px;
+  margin-bottom: 50px;
 }
 
 .PayNow-IndividualArea h2 {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .PayNow-Input {
-    max-width: 600px;
-    text-align: center;
-    font-family: "Italiana";
-    font-weight: bolder;
-    margin-left: 60px;
-    font-size: 24px;
+  max-width: 600px;
+  text-align: center;
+  font-family: "Italiana";
+  font-weight: bolder;
+  margin-left: 60px;
+  font-size: 24px;
 }
 
 .SubmitArea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    margin-left: 1020px;
-    margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin-left: 1020px;
+  margin-top: 100px;
 }
 
 .SubmitOrderButton {
-   width: 300px;
-   height: 100px;
-   border: 2px;
-   font-size: 30px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   text-align: center;
-   border-radius: 20px;
-   display: flex; 
-   justify-content: center; 
-   align-items: center;
-   margin-left: 1010px;
+  width: 300px;
+  height: 100px;
+  border: 2px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1010px;
 }
 
 .PayNow-CardArea {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .PayNow-CardTitle {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .PayNow-CardArea input[type='text'] {
-    max-width: 300px;
-    text-align: center;
-    font-family: "Italiana";
-    font-weight: bolder;
-    font-size: 24px;
+  max-width: 300px;
+  text-align: center;
+  font-family: "Italiana";
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.OrderInfoArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      
+  justify-content: center;
+  width: min(850px, 90%);
+  margin: 0 auto;
+
+  background-color: rgb(13, 9, 43);
+  padding: 16px 24px;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.OrderFormHeader {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+}
+
+.OrderTitle {
+  justify-self: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.DeliveryToggle {
+  justify-self: end;        
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;      
+  margin-left: 30px;        
+}
+
+.PickupAddressArea,
+.PickupNameArea,
+.FieldInline,
+.Field {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  gap: 12px;
+  width: 100%;
+}
+
+.PickupSection input[type='text'] {
+  margin-left: 0;
+}
+
+.PickupSection input[type='text'],
+#gateCode {
+  max-width: 60%;
+}
+
+.Gap {
+  width: 1px;
+  height: 40px;
+}
+
+.FormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.FormRow label {
+  text-align: right;     
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.FormRow input {
+  justify-self: center; 
+  width: 80%;
+  max-width: 400px;
+  padding: 6px 10px;
+  font-family: "Italiana";
+  font-size: 18px;
+  text-align: center;
+}
+
+
+.TipSelectorArea {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;              
+  justify-content: center;
+  width: min(850px, 90%);
+  margin: 24px auto;              
+  background-color: rgb(13, 9, 43);         
+  padding: 16px 24px;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.TipSelectorArea > h3 {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.TipSelectorArea .Field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+#tipSelect {
+  min-width: 140px;
+  text-align: center;
+  font-family: "Italiana";
+  font-size: 18px;
+}
+
+.FinalSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(850px, 90%);
+  margin: 24px auto;
+  background-color: rgb(13, 9, 43);
+  padding: 16px 24px;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.FinalSection .PayNow-Form {
+  width: 100%;
+  margin-top: 24px;           
+}
+
+.FinalSection .PayNow-IndividualArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-left: 0;            
+  margin-bottom: 20px;
+}
+
+.FinalSection .PayNow-IndividualArea h2 {
+  font-size: 18px;
+  margin: 0;
+  text-align: right;           
+  min-width: 220px;          
+}
+
+.FinalSection .PayNow-Input {
+  max-width: 400px;
+  width: 80%;
+  margin-left: 0;              
+  text-align: center;
+  font-size: 18px;
+}
+
+.FinalSection .SubmitOrderButton {
+  margin: 32px auto 0 auto;  
+  width: 260px;                
+  height: 72px;
+  font-size: 24px;
+}
+
+.FinalSectionHeader h1 {
+    margin-left: 34%;
+}
+
+.DeliverySection {
+  width: min(850px, 90%);
+  margin: 0 auto;
+}
+
+.DeliveryHeading {
+  text-align: center;
+  margin: 8px 0 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ContactLegend {
+  display: block;        
+  text-align: center;     
+  font-weight: bold;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.RadioRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 12px;         
 }
