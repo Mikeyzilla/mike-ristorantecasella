@@ -173,12 +173,7 @@ function PayNow() {
 
                 {!checked && (
                     <div className="PickupSection">
-                        <div className="FormRow">
-                            <label htmlFor="pickupAddress">Pickup Street Address</label>
-                            <input id="pickupAddress" type="text" />
-                            <div></div>
-                        </div>
-
+                        <h1>Make sure to enter in the pickup address in Final Order details!</h1>
                         <div className="FormRow">
                             <label htmlFor="pickupName">What name should we have for the order?</label>
                             <input id="pickupName" type="text" />

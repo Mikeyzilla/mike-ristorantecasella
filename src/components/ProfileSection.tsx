@@ -29,7 +29,7 @@ function ProfileSection() {
             myFavoriteFood = null;
         }
         if (!myFavoriteFood) {
-            return <p>No favorite movie yet.</p>;
+            return <p>No favorite food yet.</p>;
         }
         return (
             <div className='FavoriteFoodArea'>
@@ -83,6 +83,7 @@ function ProfileSection() {
                 },
                 { headers: { 'Content-Type': 'application/json' } }
             );
+            alert("Password Change is a success!");
         } catch (err) {
             console.error("Error with changing password: ", err);
         }
@@ -105,8 +106,11 @@ function ProfileSection() {
                 data: { username: nameOfUser },
                 headers: { 'Content-Type': 'application/json' }
             });
+            alert("Deleted account successfully.");
+            localStorage.removeItem('username');
+            navigate("/");
         } catch (err) {
-            console.error("Error grabbing balance: ", err);
+            console.error("Error deleting account: ", err);
         }
     }
 
